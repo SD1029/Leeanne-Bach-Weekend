@@ -281,6 +281,32 @@
   }
   footer .flourish{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.1rem; letter-spacing:0.02em; text-transform:none; color: var(--lavender-deep); margin-bottom:0.8em; display:block; }
 
+  /* ---------- GUEST LIST ---------- */
+  .guest-grid{
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1em; margin-top: 2.5em;
+  }
+  .guest-card{
+    background:#fff;
+    border: 1px solid var(--silver-line);
+    border-radius: 2px;
+    padding: 1.3em 1.4em;
+    display:flex; align-items:baseline; gap: 0.8em;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .guest-card:hover{ transform: translateY(-3px); box-shadow: 0 14px 30px -20px rgba(74,58,90,0.35); }
+  .guest-num{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.1rem; color: var(--lavender-deep); flex-shrink:0; }
+  .guest-name{ font-size:0.95rem; color: var(--ink); flex-grow:1; }
+  .guest-phone{ font-size:0.82rem; color: var(--ink-soft); letter-spacing:0.02em; white-space:nowrap; }
+
+  @media (max-width: 600px){
+    .guest-grid{ grid-template-columns: 1fr 1fr; gap: 0.8em; }
+    .guest-card{ padding: 1em 1.1em; flex-wrap:wrap; }
+  }
+  @media (max-width: 400px){
+    .guest-grid{ grid-template-columns: 1fr; }
+  }
+
   /* fade-in-on-scroll */
   .reveal{ opacity:0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
@@ -379,7 +405,7 @@
         <div class="day-body">
           <div class="block-title">Plan</div>
           <ul>
-            <li>Guest arrival 7:00 PM &amp; welcome drinks</li>
+            <li>Guest arrival 6:00 PM and onwards &amp; welcome drinks</li>
             <li>Charcuterie / easy dinner spread</li>
             <li>Pajamas &amp; cozy set-up</li>
             <li>Games &amp; bride trivia</li>
@@ -469,6 +495,24 @@
         <div class="eyebrow">Tone for the Weekend</div>
         <div class="tone-text">Relaxed, beautiful, fun, and intentional. No stress, no rushing — just celebrating friendship and the bride.</div>
       </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Team Bride</div>
+      <h2>9 Bombshells have entered the Georgetown Estate</h2>
+    </div>
+    <div class="guest-grid">
+      <div class="guest-card"><span class="guest-num">01</span><span class="guest-name">Leeanne</span><span class="guest-phone">(519) 588-9845</span></div>
+      <div class="guest-card"><span class="guest-num">02</span><span class="guest-name">Simran</span><span class="guest-phone">(408) 210-7631</span></div>
+      <div class="guest-card"><span class="guest-num">03</span><span class="guest-name">Mahema</span><span class="guest-phone">(647) 281-2094</span></div>
+      <div class="guest-card"><span class="guest-num">04</span><span class="guest-name">Asha</span><span class="guest-phone">(647) 746-7015</span></div>
+      <div class="guest-card"><span class="guest-num">05</span><span class="guest-name">Jasmeet</span><span class="guest-phone">(519) 802-9270</span></div>
+      <div class="guest-card"><span class="guest-num">06</span><span class="guest-name">Carley</span><span class="guest-phone">(519) 278-5149</span></div>
+      <div class="guest-card"><span class="guest-num">07</span><span class="guest-name">Laura</span><span class="guest-phone">(519) 216-7782</span></div>
+      <div class="guest-card"><span class="guest-num">08</span><span class="guest-name">Jenna</span><span class="guest-phone">(705) 730-9803</span></div>
+      <div class="guest-card"><span class="guest-num">09</span><span class="guest-name">Emily</span><span class="guest-phone">(289) 527-1927</span></div>
     </div>
   </section>
 
