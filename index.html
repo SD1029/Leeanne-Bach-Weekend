@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,8 +77,8 @@
     border-radius:50%;
     border: 1px solid rgba(143,118,168,0.18);
   }
-  .ring-a{ width: 620px; height:620px; top:-180px; left:50%; transform:translateX(-50%); }
-  .ring-b{ width: 900px; height:900px; top:-320px; left:50%; transform:translateX(-50%); border-color: rgba(143,118,168,0.10);}
+  .ring-a{ width: min(620px, 150vw); height: min(620px, 150vw); top:-180px; left:50%; transform:translateX(-50%); }
+  .ring-b{ width: min(900px, 210vw); height: min(900px, 210vw); top:-320px; left:50%; transform:translateX(-50%); border-color: rgba(143,118,168,0.10);}
 
   .hero-content{ position:relative; z-index:2; max-width: 680px; }
 
@@ -283,6 +284,30 @@
   /* fade-in-on-scroll */
   .reveal{ opacity:0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- MOBILE HARDENING ---------- */
+  @media (max-width: 600px){
+    section{ padding: 6vh 5.5vw; }
+    .hero{ padding: 9vh 6vw 7vh; min-height: 100vh; }
+    .hero-content{ max-width: 100%; }
+    .hero-dates{ gap: 1.5em; }
+    .section-head p{ padding: 0 2vw; }
+
+    .overview-grid{ grid-template-columns: 1fr 1fr; gap: 0.9em; }
+    .overview-card{ padding: 1.3em 1em; }
+    .palette-row{ gap: 1.2em; }
+
+    .day-body{ padding: 1.4em 1.3em; }
+    .day-body li{ font-size: 0.87rem; }
+    .day-label{ margin-bottom: 0.4em; }
+
+    .location-card{ padding: 2.6em 1.4em; }
+  }
+
+  @media (max-width: 400px){
+    .overview-grid{ grid-template-columns: 1fr; }
+    .hero-dates{ gap: 1.1em; }
+  }
 </style>
 </head>
 <body>
@@ -302,6 +327,17 @@
       </div>
     </div>
     <div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
+  </section>
+
+  <section class="reveal">
+    <div class="location-card">
+      <div class="eyebrow">Location</div>
+      <div class="place">Leeanne's Home</div>
+      <div class="addr">116 Sierra Crescent, Georgetown, ON L7G 0K4</div>
+      <div style="margin-top:1em;">
+        <a href="https://maps.google.com/?q=116+Sierra+Crescent+Georgetown+ON+L7G+0K4" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+    </div>
   </section>
 
   <section class="reveal">
@@ -343,7 +379,7 @@
         <div class="day-body">
           <div class="block-title">Plan</div>
           <ul>
-            <li>Guest arrival &amp; welcome drinks</li>
+            <li>Guest arrival 7:00 PM &amp; welcome drinks</li>
             <li>Charcuterie / easy dinner spread</li>
             <li>Pajamas &amp; cozy set-up</li>
             <li>Games &amp; bride trivia</li>
@@ -354,10 +390,8 @@
           <div class="block-title">Dress Code</div>
           <div class="dress-tag">Pretty pajamas</div>
           <ul>
-            <li>Satin pajama sets or cozy lounge sets</li>
-            <li>Slippers</li>
+            <li>Matching satin pajama sets (provided by Leeanne)</li>
             <li>Soft glam or no makeup</li>
-            <li>Lavender, blush &amp; cream tones encouraged</li>
           </ul>
         </div>
       </div>
@@ -373,26 +407,21 @@
         <div class="day-body">
           <div class="block-title">Morning</div>
           <ul>
-            <li>Coffee &amp; light breakfast</li>
-            <li>Uber to group mani/pedis (location TBD)</li>
+            <li>Coffee &amp; light breakfast at 10:00 AM</li>
+            <li>Nail Spa Comes Home to Us — Mobile Nail Spa at 11:00 AM</li>
           </ul>
           <div class="block-title">Afternoon</div>
           <ul>
-            <li>Return home for lunch &amp; downtime</li>
-            <li>Get ready together — hair, makeup, champagne</li>
+            <li>Grab a specialty sandwich for lunch once your nails are complete</li>
+            <li>Relax, then leisurely start getting ready together — hair, makeup, champagne</li>
             <li>Photo moments &amp; content time</li>
           </ul>
           <div class="block-title">Evening</div>
           <ul>
-            <li>Uber to dinner in Oakville (restaurant TBD)</li>
+            <li>5:30 PM Uber to Trattoria Timone Ristorante for dinner (6:30 PM reservation)</li>
+            <li>Followed by Dirty Martini to hit the bar for some Bach fun</li>
           </ul>
-          <div class="dress-tag">Elevated dresses &amp; heels</div>
-          <ul>
-            <li>Cocktail or midi-length dresses</li>
-            <li>Elegant jumpsuits welcome</li>
-            <li>Heels or dressy sandals</li>
-            <li>Polished, evening-ready look</li>
-          </ul>
+          <div class="dress-tag">Plan your dress for dinner &amp; the bar</div>
           <div class="block-title">Night — Back at the House</div>
           <ul>
             <li>Cocktails &amp; signature drinks</li>
@@ -414,10 +443,8 @@
         <div class="day-body">
           <div class="block-title">Plan</div>
           <ul>
-            <li>Slow morning &amp; coffee</li>
-            <li>At-home facials &amp; skincare</li>
-            <li>Cozy brunch at the house</li>
-            <li>Group photos</li>
+            <li>Bagel Bar + Iced Coffee Bar &amp; Face Masks</li>
+            <li>Liquid IV / Advil for recovery</li>
             <li>Goodbyes &amp; departure</li>
           </ul>
         </div>
@@ -441,17 +468,6 @@
       <div>
         <div class="eyebrow">Tone for the Weekend</div>
         <div class="tone-text">Relaxed, beautiful, fun, and intentional. No stress, no rushing — just celebrating friendship and the bride.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="reveal">
-    <div class="location-card">
-      <div class="eyebrow">Location</div>
-      <div class="place">Leeanne's Home</div>
-      <div class="addr">116 Sierra Crescent, Georgetown, ON L7G 0K4</div>
-      <div style="margin-top:1em;">
-        <a href="https://maps.google.com/?q=116+Sierra+Crescent+Georgetown+ON+L7G+0K4" target="_blank" rel="noopener">Open in Google Maps</a>
       </div>
     </div>
   </section>
